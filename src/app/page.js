@@ -2,30 +2,45 @@ import Link from "next/link";
 import { Navbar, NavbarBrand,NavbarCollapse,
   NavbarLink,NavbarToggle,
   Footer,FooterCopyright, FooterLink, FooterLinkGroup,
-  Carousel,Card,Button
+  Carousel,Card,Button,DarkThemeToggle
   } from "flowbite-react";
 export default function Home() {
   return (
   <>
-    <Navbar fluid rounded>
-      <NavbarBrand as={Link} href="https://flowbite-react.com">
-        <img src="/images/vercel.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
-      </NavbarBrand>
-      <NavbarToggle />
-      <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Home
+  <div className="bg-cyan-600">
+    <div className="container mx-auto">
+      <Navbar fluid rounded className="bg-cyan-600">
+        <NavbarBrand as={Link} href="/">
+          <img src="https://www.yuntech.edu.tw/images/website_png/Group_640.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+          <span className="whitespace-nowrap text-2xl font-bold  text-white">盜版雲林科大</span>
+        </NavbarBrand>
+        <NavbarToggle/>
+        <NavbarCollapse>
+          <NavbarLink href="#" className="text-white">
+          <span className="
+          hover:text-yellow-500 
+          px-4 
+          py-2
+          hover:border-b-2"> 交通</span>
+          </NavbarLink>
+        <NavbarLink as={Link} href="#" className="text-white ">
+          <span className="
+          hover:text-yellow-500 
+          px-4 
+          py-2 
+          hover:border-b-2">景點</span>
         </NavbarLink>
-        <NavbarLink as={Link} href="#">
-          About
+        <NavbarLink href="#" className="text-white">
+          <span className="hover:text-yellow-500 
+          px-4 
+          py-2 
+          hover:border-b-2">關於我們</span>
         </NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
-      </NavbarCollapse>
-    </Navbar>
-
+        </NavbarCollapse>
+        <DarkThemeToggle />
+      </Navbar>
+    </div>
+  </div>
 
     <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
       <Carousel>
@@ -36,7 +51,10 @@ export default function Home() {
         <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
       </Carousel>
     </div>
-    <Card href="#" className="max-w-sm">
+    <div className="bg-white">
+      <div className="container">
+      
+      <Card href="#" className="max-w-sm">
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         Noteworthy technology acquisitions 2021
       </h5>
@@ -53,8 +71,9 @@ export default function Home() {
           />
         </svg>
       </Button>
-    </Card>
-
+      </Card>
+      </div>
+    </div>
 
     <Footer container>
     <FooterCopyright href="#" by="Flowbite™" year={2022} />
