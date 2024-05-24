@@ -73,8 +73,8 @@ export default function Home() {
         <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
       </Carousel>
     </div>
-    <div className="bg-white">
-      <div className="container mx-auto grid-cols-4 gap-4">
+    <div className="bg-white py-4">
+      <div className="container mx-auto grid grid-cols-4 gap-4">
       { items.map(item =>
       <Card 
       className="max-w-sm"
