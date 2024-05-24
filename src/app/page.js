@@ -69,12 +69,12 @@ export default function Home() {
         <img src="banner/image1.jpg" alt="由 象心力 - 自己的作品, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=15009792" />
         <img src="images/image-2.jpg" alt="..." />
         <img src="images/image-1.jpg " alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
+        <img src="images/image-3.jpg" alt="..." />
         <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
       </Carousel>
     </div>
     <div className="bg-white">
-      <div className="container mx-auto">
+      <div className="container mx-auto grid-cols-4 gap-4">
       { items.map(item =>
       <Card 
       className="max-w-sm"
