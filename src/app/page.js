@@ -1,3 +1,6 @@
+/*
+* @author 蘇新宇 <aa40706aagmail.com>
+*/ 
 import Link from "next/link";
 import { Navbar, NavbarBrand,NavbarCollapse,
   NavbarLink,NavbarToggle,
@@ -5,6 +8,25 @@ import { Navbar, NavbarBrand,NavbarCollapse,
   Carousel,Card,Button,DarkThemeToggle
   } from "flowbite-react";
 export default function Home() {
+  
+  const items = [
+  {
+    cover:"banner/image1.jpg",
+    name:"北港朝天宮",
+    description:"北港朝天宮(台文：pak)",
+  },
+  {
+    cover:"",
+    name:"",
+    description:"",
+  },
+  {
+    cover:"",
+    name:"",
+    description:"",
+  },
+  ];
+
   return (
   <>
   <div className="bg-cyan-600">
@@ -44,25 +66,29 @@ export default function Home() {
 
     <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
       <Carousel>
-        <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
+        <img src="banner/image1.jpg" alt="由 象心力 - 自己的作品, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=15009792" />
+        <img src="images/image-2.jpg" alt="..." />
+        <img src="images/image-1.jpg " alt="..." />
         <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
         <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
       </Carousel>
     </div>
     <div className="bg-white">
-      <div className="container">
-      
-      <Card href="#" className="max-w-sm">
+      <div className="container mx-auto">
+      { items.map(item =>
+      <Card 
+      className="max-w-sm"
+      imgAlt={item.name}
+      imgSrc={item.cover}
+      >
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Noteworthy technology acquisitions 2021
+      {item.name}
       </h5>
       <p className="font-normal text-gray-700 dark:text-gray-400">
-        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+        {item.description}
       </p>
       <Button>
-        Read more
+        查看更多
         <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path
             fillRule="evenodd"
@@ -72,9 +98,11 @@ export default function Home() {
         </svg>
       </Button>
       </Card>
+      )
+      }
       </div>
     </div>
-
+   
     <Footer container>
     <FooterCopyright href="#" by="Flowbite™" year={2022} />
     <FooterLinkGroup>
